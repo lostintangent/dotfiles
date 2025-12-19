@@ -1,3 +1,3 @@
-# lostintangent's dotfiles
+# 💠 lostintangent's dotfiles
 
-this is cool
+This is where I'll be maintaining my shell scripts, and re-usable agent skills/commands/etc.
