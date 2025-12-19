@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Hi anthony
+
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
