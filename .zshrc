@@ -29,3 +29,6 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Aliases
 alias code-jump="~/Desktop/vscode/scripts/code.sh"
 alias cls="clear"
+# omnara
+export OMNARA_INSTALL="$HOME/.omnara"
+export PATH="$OMNARA_INSTALL/bin:$PATH"
