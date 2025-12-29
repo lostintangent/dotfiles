@@ -1,0 +1,10 @@
+export HOMEBREW_PREFIX="/opt/homebrew"
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar"
+export HOMEBREW_REPOSITORY="/opt/homebrew"
+export NVM_DIR="$HOME/.nvm"
+
+export OMNARA_INSTALL="$HOME/.omnara"
+
+path PATH $OMNARA_INSTALL/bin /opt/homebrew/bin /opt/homebrew/sbin $NVM_DIR/versions/node/v22.17.1/bin
+
+alias cls clear
