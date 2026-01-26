@@ -27,3 +27,9 @@ source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 eval "$(fnm env)"
+# bun completions
+[ -s "/Users/lostintangent/.bun/_bun" ] && source "/Users/lostintangent/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
