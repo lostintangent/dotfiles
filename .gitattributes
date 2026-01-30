@@ -1,0 +1,24 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Shell scripts
+*.sh text eol=lf
+.zshrc text eol=lf
+.bashrc text eol=lf
+.bash_profile text eol=lf
+
+# Git configuration
+.gitconfig text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+
+# Documentation
+*.md text eol=lf
+*.txt text eol=lf
+
+# Archives
+*.zip binary
+*.tar binary
+*.gz binary
+*.tgz binary
+*.7z binary

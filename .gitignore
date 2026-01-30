@@ -1,2 +1,59 @@
+# ============================================
+# Operating System Files
+# ============================================
+
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
 Desktop.ini
+Thumbs.db
+ehthumbs.db
+$RECYCLE.BIN/
+
+# Linux
+.directory
+
+# ============================================
+# Backup Files
+# ============================================
+
+*.backup
+*.bak
+*.swp
+*.swo
+*~
+
+# ============================================
+# IDE and Editor Files
+# ============================================
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
+
+# Emacs
+\#*\#
+.\#*
+
+# ============================================
+# Temporary Files
+# ============================================
+
+*.tmp
+*.temp
+.cache/
+tmp/

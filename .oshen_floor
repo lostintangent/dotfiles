@@ -1,10 +1,33 @@
+# ============================================
+# Oshen Floor Configuration
+# ============================================
+
+# Homebrew paths
 export HOMEBREW_PREFIX="/opt/homebrew"
 export HOMEBREW_CELLAR="/opt/homebrew/Cellar"
 export HOMEBREW_REPOSITORY="/opt/homebrew"
+
+# NVM configuration
 export NVM_DIR="$HOME/.nvm"
 
+# Omnara configuration
 export OMNARA_INSTALL="$HOME/.omnara"
 
-path PATH $OMNARA_INSTALL/bin /opt/homebrew/bin /opt/homebrew/sbin $NVM_DIR/versions/node/v22.17.1/bin
+# PATH configuration
+# Only add directories that exist
+# Note: Update the Node.js version path below to match your installed version
+PATH_DIRS=(
+  "$OMNARA_INSTALL/bin"
+  "/opt/homebrew/bin"
+  "/opt/homebrew/sbin"
+  "$NVM_DIR/versions/node/v22.17.1/bin"  # Update this to your Node.js version
+)
 
-alias cls clear
+for dir in "${PATH_DIRS[@]}"; do
+  if [[ -d "$dir" ]]; then
+    path PATH "$dir"
+  fi
+done
+
+# Aliases
+alias cls=clear

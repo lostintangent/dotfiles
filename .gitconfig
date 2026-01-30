@@ -1,11 +1,70 @@
 [user]
 	name = Jonathan Carter
 	email = jc@trl.mx
+
 [credential "https://github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
+
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
+
 [url "https://github.com/"]
 	insteadOf = ssh://git@github.com/
+
+[core]
+	editor = vim
+	autocrlf = input
+	excludesfile = ~/.gitignore_global
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = false
+
+[push]
+	default = simple
+	autoSetupRemote = true
+
+[fetch]
+	prune = true
+
+[diff]
+	colorMoved = zebra
+
+[alias]
+	# Status shortcuts
+	st = status
+	s = status -sb
+	
+	# Branch shortcuts
+	br = branch
+	co = checkout
+	cob = checkout -b
+	
+	# Commit shortcuts
+	ci = commit
+	cm = commit -m
+	ca = commit --amend
+	can = commit --amend --no-edit
+	
+	# Log shortcuts
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	ll = log --pretty=format:'%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]' --decorate --numstat
+	
+	# Diff shortcuts
+	df = diff
+	dfc = diff --cached
+	
+	# Undo shortcuts
+	undo = reset --soft HEAD^
+	unstage = reset HEAD --
+	
+	# Show last commit
+	last = log -1 HEAD --stat
+	
+	# List aliases
+	aliases = config --get-regexp alias
