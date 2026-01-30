@@ -48,7 +48,7 @@ The following tools are recommended for full functionality:
   brew install fnm
   ```
 
-### Quick Setup
+### Automated Setup (Recommended)
 
 1. **Clone this repository:**
    ```bash
@@ -56,23 +56,35 @@ The following tools are recommended for full functionality:
    cd ~/dotfiles
    ```
 
-2. **Backup existing dotfiles (if any):**
+2. **Run the installation script:**
    ```bash
-   mv ~/.zshrc ~/.zshrc.backup 2>/dev/null || true
-   mv ~/.gitconfig ~/.gitconfig.backup 2>/dev/null || true
+   ./install.sh
+   ```
+   
+   The script will:
+   - Automatically backup any existing dotfiles
+   - Create symlinks to your home directory
+   - Check for optional dependencies
+   - Provide next steps
+
+3. **Reload your shell:**
+   ```bash
+   source ~/.zshrc
    ```
 
-3. **Create symlinks:**
+### Manual Setup (Alternative)
+
+If you prefer to set up manually or need to customize the installation:
+
+1. Clone the repository (as above)
+2. Create symlinks for the files you want:
    ```bash
    ln -sf ~/dotfiles/.zshrc ~/.zshrc
    ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
    ln -sf ~/dotfiles/.gitignore ~/.gitignore_global
+   # Note: .oshen_floor is specific to Oshen environment
    ```
-
-4. **Reload your shell:**
-   ```bash
-   source ~/.zshrc
-   ```
+3. Reload your shell: `source ~/.zshrc`
 
 ## 🎨 Features
 

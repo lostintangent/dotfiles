@@ -49,6 +49,16 @@ create_symlink "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
 create_symlink "$DOTFILES_DIR/.gitconfig" "$HOME/.gitconfig"
 create_symlink "$DOTFILES_DIR/.gitignore" "$HOME/.gitignore_global"
 
+# Note: .oshen_floor is specific to Oshen environment, only link if user wants it
+if [ -f "$DOTFILES_DIR/.oshen_floor" ]; then
+  echo ""
+  read -p "Do you want to install .oshen_floor (Oshen environment config)? [y/N] " -n 1 -r
+  echo ""
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    create_symlink "$DOTFILES_DIR/.oshen_floor" "$HOME/.oshen_floor"
+  fi
+fi
+
 echo ""
 echo -e "${GREEN}✓ Installation complete!${NC}"
 echo ""
@@ -68,6 +78,10 @@ check_command() {
 }
 
 check_brew_package() {
+  if ! command -v brew &> /dev/null; then
+    return 1
+  fi
+  
   if brew list "$1" &> /dev/null 2>&1; then
     echo -e "${GREEN}✓ $1 is installed${NC}"
     return 0

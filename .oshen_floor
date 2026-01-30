@@ -15,11 +15,12 @@ export OMNARA_INSTALL="$HOME/.omnara"
 
 # PATH configuration
 # Only add directories that exist
+# Note: Update the Node.js version path below to match your installed version
 PATH_DIRS=(
   "$OMNARA_INSTALL/bin"
   "/opt/homebrew/bin"
   "/opt/homebrew/sbin"
-  "$NVM_DIR/versions/node/v22.17.1/bin"
+  "$NVM_DIR/versions/node/v22.17.1/bin"  # Update this to your Node.js version
 )
 
 for dir in "${PATH_DIRS[@]}"; do
