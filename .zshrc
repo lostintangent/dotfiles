@@ -1,3 +1,7 @@
+# ============================================
+# ZSH Configuration
+# ============================================
+
 # Enable completion system
 autoload -Uz compinit
 compinit
@@ -6,6 +10,10 @@ compinit
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' list-colors 'di=34'
+
+# ============================================
+# Prompt Configuration
+# ============================================
 
 # Git-aware prompt with vcs_info
 autoload -Uz vcs_info
@@ -20,20 +28,42 @@ zstyle ':vcs_info:git:*' actionformats ' (%b|%a)'
 setopt prompt_subst
 PROMPT='%F{cyan}%~%f%F{magenta}${vcs_info_msg_0_}%f $ '
 
-# Enable zsh-autosuggestions
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# ============================================
+# ZSH Plugins
+# ============================================
 
-# Enable zsh-syntax-highlighting
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Enable zsh-autosuggestions (if installed)
+if [[ -f /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+  source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
 
-eval "$(fnm env)"
-# bun completions
-[ -s "/Users/lostintangent/.bun/_bun" ] && source "/Users/lostintangent/.bun/_bun"
+# Enable zsh-syntax-highlighting (if installed)
+if [[ -f /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+  source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
-# bun
+# ============================================
+# Development Tools
+# ============================================
+
+# fnm (Fast Node Manager)
+if command -v fnm &> /dev/null; then
+  eval "$(fnm env)"
+fi
+
+# Bun completions
+if [[ -s "$HOME/.bun/_bun" ]]; then
+  source "$HOME/.bun/_bun"
+fi
+
+# Bun environment
 export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+if [[ -d "$BUN_INSTALL/bin" ]]; then
+  export PATH="$BUN_INSTALL/bin:$PATH"
+fi
 
-# omnara
+# Omnara environment
 export OMNARA_INSTALL="$HOME/.omnara"
-export PATH="$OMNARA_INSTALL/bin:$PATH"
+if [[ -d "$OMNARA_INSTALL/bin" ]]; then
+  export PATH="$OMNARA_INSTALL/bin:$PATH"
+fi
