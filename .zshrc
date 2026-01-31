@@ -34,3 +34,6 @@ eval "$(fnm env)"
 # omnara
 export OMNARA_INSTALL="$HOME/.omnara"
 export PATH="$OMNARA_INSTALL/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/lostintangent/.antigravity/antigravity/bin:$PATH"
