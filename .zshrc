@@ -38,3 +38,6 @@ export PATH="$OMNARA_INSTALL/bin:$PATH"
 # Added by Antigravity
 export PATH="/Users/lostintangent/.antigravity/antigravity/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+
+# GitHub Ace
+export PATH="$HOME/.ace/bin:$PATH"
